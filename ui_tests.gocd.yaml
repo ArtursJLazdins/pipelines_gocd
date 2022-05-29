@@ -6,6 +6,7 @@ pipelines:
     materials:
       testrepo:
         git: https://github.com/ArtursJLazdins/ci_course
+        branch: main
     environment_variables:
       TEST_ENVIRONMENT: dev
     stages:
@@ -17,11 +18,11 @@ pipelines:
                    command: bash 
                    arguments: 
                     - -c 
-                    - "Running UI tests ${TEST_ENVIRONMENT} environment and chrome browser"
+                    - echo "Running UI tests ${TEST_ENVIRONMENT} environment and chrome browser"
             test-firefox:
               tasks:
                - exec:
                    command: bash 
                    arguments: 
                     - -c 
-                    - "Running UI tests ${TEST_ENVIRONMENT} environment and firefox browser"
+                    - echo "Running UI tests ${TEST_ENVIRONMENT} environment and firefox browser"
